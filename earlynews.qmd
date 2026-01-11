@@ -3,9 +3,23 @@ title: "Early News"
 page-layout: full
 ---
 ## Conference Presentations
-* **Coming soon...**
+
+::: {.columns}
+::: {.column width="25%"}
+![](images/BHS_logo.png){width=200}
+:::
+
+::: {.column width="75%"}
+**British Hip Society (BHS) — Olympia 2026**  
+
+Title: *Ranking implant loading during high-impact exercises in people with total hip replacements*  
+
+[Download the abstract (DOCX)](files/BHS_Abstract.docx)
+:::
+:::
 
 ## Pre-print Articles
+
 * **Coming soon...**
 
 
