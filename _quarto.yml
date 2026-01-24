@@ -19,7 +19,7 @@ website:
       - href: publications.qmd
         text: Publications
       - href: resources.qmd
-        text: Resources
+        text: Patient Resources
       - href: contact.qmd
         text: Contact
   favicon: img/favicon.ico
@@ -37,3 +37,4 @@ format:
     theme: cosmo
     toc: true
     css: styles.css
+    lightbox: true

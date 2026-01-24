@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-b8193b006b40df2638528b9947adabc2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./resources.html"> 
-<span class="menu-text">Resources</span></a>
+<span class="menu-text">Patient Resources</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./contact.html" aria-current="page"> 
@@ -151,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div style="display: flex; align-items: center; gap: 2rem; margin-top: 2rem;">
-<p><img src="images/bernard-liew.jpg" class="img-fluid" style="border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" width="250"></p>
+<p><a href="images/bernard-liew.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/bernard-liew.jpg" class="img-fluid" style="border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" width="250"></a></p>
 <div class="contact-block">
 <p><strong>Name:</strong> Dr Bernard Liew<br>
 <strong>Email:</strong> <a href="mailto:BL19622@essex.ac.uk" class="email">bl19622@essex.ac.uk</a></p>
@@ -581,6 +584,38 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

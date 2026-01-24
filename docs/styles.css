@@ -389,3 +389,63 @@ footer.footer {
   color: #ffffff;                              /* White text */
   border-top: 2px solid #ffffff; /* The Narrow White Line */
 }
+/* === Poster thumbnail (click to magnify) === */
+.poster-thumb {
+  max-width: 140px; /* Reduced from 260px to fit better with text */
+  height: auto;
+  border-radius: 8px; /* Slightly tighter radius for a smaller image */
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  cursor: zoom-in;
+  transition: transform 0.15s ease;
+  margin-top: 0.5rem; /* Adds a small gap between the title text and the image */
+  display: block;      /* Ensures it sits on its own line below the text */
+}
+
+.poster-thumb:hover {
+  transform: scale(1.05); /* Slightly more noticeable hover on a smaller target */
+}
+/* === Early News: BHS header (logo left of title) === */
+.bhs-header {
+  display: flex;            /* force logo + title on one line */
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Mobile: allow stacking if needed */
+@media (max-width: 768px) {
+  .bhs-header {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* Remove default figure spacing inside the logo column */
+.bhs-header figure,
+.bhs-header p {
+  margin: 0;
+}
+
+.bhs-header .column {
+  display: flex;
+  align-items: center;
+}
+
+/* Keep the BHS logo small (no poster-style magnification) */
+.bhs-logo {
+  width: 90px;
+  max-width: 90px;
+  height: auto;
+  margin: 0;
+  display: block;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.bhs-header h3 {
+  margin: 0;
+}
+

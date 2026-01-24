@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-b8193b006b40df2638528b9947adabc2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./resources.html"> 
-<span class="menu-text">Resources</span></a>
+<span class="menu-text">Patient Resources</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./contact.html"> 
@@ -161,15 +164,17 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="conference-presentations" class="level2">
 <h2 class="anchored" data-anchor-id="conference-presentations">Conference Presentations</h2>
-<div class="columns">
-<div class="column" style="width:25%;">
-<p><img src="images/BHS_logo.png" class="img-fluid" width="200"></p>
-</div><div class="column" style="width:75%;">
-<p><strong>British Hip Society (BHS) — Olympia 2026</strong></p>
-<p>Title: <em>Ranking implant loading during high-impact exercises in people with total hip replacements</em></p>
-<p><a href="files/BHS_Abstract.docx">Download the abstract (DOCX)</a></p>
+<div class="bhs-header">
+<p><a href="images/BHS_logo.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/BHS_logo.png" class="bhs-logo img-fluid" alt="British Hip Society (BHS) logo"></a></p>
+<section id="british-hip-society-bhs-olympia-2026" class="level3">
+<h3 class="anchored" data-anchor-id="british-hip-society-bhs-olympia-2026">British Hip Society (BHS) — Olympia 2026</h3>
+</section>
 </div>
-</div>
+<ol type="1">
+<li><p>Title: <a href="files/BHS_Abstract.docx" download="BHS_Abstract.docx"><em>Ranking implant loading during high-impact exercises in people with total hip replacements</em></a><br>
+<strong>Poster:</strong> <a href="images/BHS_Abstract.png" class="lightbox"><img src="images/BHS_Abstract.png" class="poster-thumb" alt="BHS poster thumbnail"></a></p></li>
+<li><p>Title: <a href="files/BHS_Abstract.docx" download="BHS_Abstract.docx"><em>Ranking implant loading during high-impact exercises in people with total hip replacements</em></a></p></li>
+</ol>
 </section>
 <section id="pre-print-articles" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="pre-print-articles">Pre-print Articles</h2>
@@ -601,6 +606,38 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
