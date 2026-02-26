@@ -10,6 +10,7 @@ project:
 
 website:
   title: "MLMCS"
+  site-url: "https://behglm.github.io/Monocular_MLMCS/"
   navbar:
     title: false
     logo: images/University_of_Essex_logo.svg.png 
