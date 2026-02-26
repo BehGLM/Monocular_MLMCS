@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>SafeJOINTs</title>
+<title>MLMCS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -137,13 +137,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#about-the-project" id="toc-about-the-project" class="nav-link active" data-scroll-target="#about-the-project">About the project</a>
   <ul class="collapse">
-  <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters">Why it matters</a></li>
+  <li><a href="#data-collection-and-dataset" id="toc-data-collection-and-dataset" class="nav-link" data-scroll-target="#data-collection-and-dataset">Data collection and Dataset</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">SafeJOINTs</h1></header>
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">MLMCS</h1></header>
 
 <header id="title-block-header">
 
@@ -153,33 +153,32 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="column-screen custom-banner">
 <div class="banner-content">
-<p><img src="images/knee-hip-rep.png" alt="Hip and Knee Replacement Illustration" class="banner-logo"></p>
 <div class="banner-text">
 <h1>
-SafeJOINTs: Informing Safety Guidelines After Hip &amp; Knee Replacement
+Markerless 3D Reconstruction from a Single Camera
 </h1>
 <p>
-Biomechanics, musculoskeletal &amp; finite element wear modelling to guide safe return to sport
+A single-camera pipeline combining 2D keypoints with PoseFormerV2 reconstruction trained on in-lab data
 </p>
+<div class="banner-gifs">
+<p><img src="images/video_1Camera1.gif" alt="Single-camera demo: Camera 1" class="banner-gif"> <img src="images/2_video_2Camera2.gif" alt="Single-camera demo: Camera 2" class="banner-gif"> <img src="images/video_3Camera3.gif" alt="Single-camera demo: Camera 3" class="banner-gif"></p>
+</div>
 </div>
 </div>
 </div>
 <section id="about-the-project" class="level2 column-page hero-section">
 <h2 class="anchored" data-anchor-id="about-the-project">About the project</h2>
-<p>SafeJOINTs is a research programme to guide a safe return to high-impact activities (e.g., running, tennis) after total hip and knee replacement. In the UK, ~100,000 hip and ~108,000 knee replacements were performed in 2019; primary procedures cost the NHS close to £1 billion each annually. High-impact activities are often discouraged, yet existing studies mainly track surgical revision rates and overlook the biomechanical mechanisms, activity volume, and movement technique that drive bone/implant loading. Computational modelling is ideally suited to fill these gaps.</p>
-<section id="why-it-matters" class="level3">
-<h3 class="anchored" data-anchor-id="why-it-matters">Why it matters</h3>
-<ul>
-<li>Provide clinician-friendly guidance on which activities and techniques are safest after hip/knee replacement.</li>
-<li>Help patients and clinicians make evidence-based decisions that maximise quality of life without compromising implant longevity.</li>
-<li>Deliver open-access datasets/models to advance pre-clinical testing (beyond simplified ISO load profiles) and improve predictions of implant wear and bone loading in everyday and sport contexts.</li>
-</ul>
+<p>This project aims to reconstruct 3D human joint positions from a single RGB camera. We use standard video as input, estimate 2D keypoints, and then lift them to 3D using a PoseFormer-based 2D→3D model that is fine-tuned on our own laboratory dataset. Before 2D keypoints are passed to the 3D lifter, they are refined using a non-linear p-Laplacian regulariser (a spatiotemporal, graph-based refinement) to improve temporal consistency and reduce tracking noise.</p>
+<section id="data-collection-and-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection-and-dataset">Data collection and Dataset</h3>
+<p>To fine-tune and evaluate the pipeline, we are building a proprietary dataset in a controlled lab setting. Sixty healthy adults perform 70 movement tasks spanning lower- and upper-limb activities (e.g., walking, jumping, overhead reaches), including both slow and fast movements.</p>
+<p>Movements are captured using an 8-camera Theia Markerless Technology setup (Sony RX0 II cameras, 120 Hz), with Theia Markerless Technology serving as the 3D reference. The Theia Markerless Technology outputs are processed in Visual3D to quantify kinematics across key body segments, including the ankles, knees, hips, trunk, and upper limbs.</p>
 </section>
 </section>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><a href="images/Safejoints-proposal-infog.png" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-1"><img src="images/Safejoints-proposal-infog.png" class="column-page img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
+<p class="page-columns page-full"><a href="images/Flow-chart.png" class="lightbox page-columns page-full" data-gallery="quarto-lightbox-gallery-1"><img src="images/Flow-chart.png" class="column-page img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 <p><br></p>
@@ -599,7 +598,7 @@ Biomechanics, musculoskeletal &amp; finite element wear modelling to guide safe 
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2025 SafeJOINTs. All rights reserved.<br> University of Essex &amp; University of Luxembourg | Funded by Medical Research Council &amp; FNR - Luxembourg National Research Fund</p>
+<p>© 2026 MLMCS. All rights reserved.<br> University of Essex | Funded by UK Research and Innovation (UKRI) Innovate UK, Medical Research Council, and © Aparito, a wholly owned subsidiary of Eli Lilly and Company.</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

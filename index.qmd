@@ -1,37 +1,42 @@
 ---
-title: "SafeJOINTs"
+title: "MLMCS"
 title-block-style: none
 resources:
   - images/Running-background.png
-  - images/Safejoints-proposal-infog.png
+  - images/Flow-chart.png
+  - images/video_1Camera1.gif
+  - images/2_video_2Camera2.gif
+  - images/video_3Camera3.gif
 ---
 
-::::: {.column-screen .custom-banner}
-:::: banner-content
-<img src="images/knee-hip-rep.png" alt="Hip and Knee Replacement Illustration" class="banner-logo"/>
+:::::: {.column-screen .custom-banner}
+::::: banner-content
+:::: banner-text
+<h1>Markerless 3D Reconstruction from a Single Camera</h1>
 
-::: banner-text
-<h1>SafeJOINTs: Informing Safety Guidelines After Hip & Knee Replacement</h1>
+<p>A single-camera pipeline combining 2D keypoints with PoseFormerV2 reconstruction trained on in-lab data</p>
 
-<p>Biomechanics, musculoskeletal & finite element wear modelling to guide safe return to sport</p>
+::: banner-gifs
+<img src="images/video_1Camera1.gif" alt="Single-camera demo: Camera 1" class="banner-gif"/> <img src="images/2_video_2Camera2.gif" alt="Single-camera demo: Camera 2" class="banner-gif"/> <img src="images/video_3Camera3.gif" alt="Single-camera demo: Camera 3" class="banner-gif"/>
 :::
 ::::
 :::::
+::::::
 
 ::: {.column-page .hero-section}
 ## About the project {#about-the-project}
 
-SafeJOINTs is a research programme to guide a safe return to high-impact activities (e.g., running, tennis) after total hip and knee replacement. In the UK, \~100,000 hip and \~108,000 knee replacements were performed in 2019; primary procedures cost the NHS close to £1 billion each annually. High-impact activities are often discouraged, yet existing studies mainly track surgical revision rates and overlook the biomechanical mechanisms, activity volume, and movement technique that drive bone/implant loading. Computational modelling is ideally suited to fill these gaps.
+This project aims to reconstruct 3D human joint positions from a single RGB camera. We use standard video as input, estimate 2D keypoints, and then lift them to 3D using a PoseFormer-based 2D→3D model that is fine-tuned on our own laboratory dataset. Before 2D keypoints are passed to the 3D lifter, they are refined using a non-linear p-Laplacian regulariser (a spatiotemporal, graph-based refinement) to improve temporal consistency and reduce tracking noise.
 
-### Why it matters
+### Data collection and Dataset
 
--   Provide clinician-friendly guidance on which activities and techniques are safest after hip/knee replacement.
--   Help patients and clinicians make evidence-based decisions that maximise quality of life without compromising implant longevity.
--   Deliver open-access datasets/models to advance pre-clinical testing (beyond simplified ISO load profiles) and improve predictions of implant wear and bone loading in everyday and sport contexts.
+To fine-tune and evaluate the pipeline, we are building a proprietary dataset in a controlled lab setting. Sixty healthy adults perform 70 movement tasks spanning lower- and upper-limb activities (e.g., walking, jumping, overhead reaches), including both slow and fast movements.
+
+Movements are captured using an 8-camera Theia Markerless Technology setup (Sony RX0 II cameras, 120 Hz), with Theia Markerless Technology serving as the 3D reference. The Theia Markerless Technology outputs are processed in Visual3D to quantify kinematics across key body segments, including the ankles, knees, hips, trunk, and upper limbs.
 :::
 
 <br>
 
-![](images/Safejoints-proposal-infog.png){.column-page fig-align="center" width="100%"}
+![](images/Flow-chart.png){.column-page fig-align="center" width="100%"}
 
 {{< include _disclaimer.qmd >}}

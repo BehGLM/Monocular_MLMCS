@@ -7,11 +7,11 @@ format:
 ---
 
 :::: {style="display: flex; align-items: center; gap: 2rem; margin-top: 2rem;"}
-![](images/bernard-liew.jpg){width="250px" style="border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"}
+![](images/behnam-gholami.jpg){style="border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" width="219"}
 
 ::: contact-block
-**Name:** Dr Bernard Liew\
-**Email:** [bl19622\@essex.ac.uk](mailto:BL19622@essex.ac.uk){.email}
+**Name:** Behnam Gholami\
+**Email:** [bg24306\@essex.ac.uk](mailto:BL19622@essex.ac.uk){.email}
 :::
 ::::
 

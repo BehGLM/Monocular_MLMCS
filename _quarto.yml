@@ -3,9 +3,13 @@ project:
   output-dir: docs
   resources:
     - files/**
+    - images/video_1Camera1.gif
+    - images/2_video_2Camera2.gif
+    - images/video_3Camera3.gif
+
 
 website:
-  title: "SafeJOINTs"
+  title: "MLMCS"
   navbar:
     title: false
     logo: images/University_of_Essex_logo.svg.png 
@@ -29,8 +33,9 @@ website:
     background: "#0b1f3a" # Matches your dark navy navbar
     foreground: "#ffffff" # White text
     center: |
-      &copy; 2025 SafeJOINTs. All rights reserved.<br>
-      University of Essex & University of Luxembourg | Funded by Medical Research Council & FNR - Luxembourg National Research Fund
+      &copy; 2026 MLMCS. All rights reserved.<br>
+      University of Essex | Funded by UK Research and Innovation (UKRI) Innovate UK, 
+      Medical Research Council, and © Aparito, a wholly owned subsidiary of Eli Lilly and Company.
 
 format:
   html:

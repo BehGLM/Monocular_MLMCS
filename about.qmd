@@ -4,198 +4,32 @@ title-block-banner: "#0d6efd"
 page-layout: full
 ---
 
-::: postdoc-heading
-Principal Investigators
-:::
-
-::::::::::::::: team-grid
+::::::: team-grid
 :::: team-card
 ![](images/bernard-liew.jpg){.team-photo}
 
 ::: team-info
-**Dr Bernard Liew, University of Essex (UoE)**
+<p class="team-name">
 
-<p class="team-role">
+### **Dr Bernard Liew**
 
-**Senior Lecturer in Biomechanics, School of Sport, Rehabilitation and Exercise Sciences (SRES)**
+</p>
+
+<p class="team-department">
+
+Senior Lecturer in Biomechanics
+
+</p>
+
+<p class="team-affiliation">
+
+University of Essex
 
 </p>
 
 <p class="team-bio">
 
-Dr Bernard Liew is a Senior Lecturer in Biomechanics in the School of Sport, Rehabilitation and Exercise Sciences (SRES). He is a physiotherapist, with close to 10 years of experience in clinical biomechanics. He has led research at the intersection of clinical biomechanics, musculoskeletal, and finite element modelling (FEM).
-
-</p>
-:::
-::::
-
-:::: team-card
-![](images/leiming-gao.jpg){.team-photo}
-
-::: team-info
-**Dr Leiming Gao, Nottingham Trent University (NTU)**
-
-<p class="team-role">
-
-**Senior Lecturer Biomedical Engineering, Department of Engineering**
-
-</p>
-
-<p class="team-bio">
-
-Dr Leiming Gao is a Senior Lecturer in Biomedical Engineering. Leiming’s expertise lies in Biotribology, particularly lubrication and wear modelling of hip and knee joint replacements.
-
-</p>
-:::
-::::
-
-:::: team-card
-![](images/stephen-mcdonnell.jpg){.team-photo}
-
-::: team-info
-**Dr Stephen McDonnell, University of Cambridge, Addenbrooke’s Hospital**
-
-<p class="team-role">
-
-**Associate Professor & Consultant Orthopaedic Surgeon (Hip & Knee)**
-
-</p>
-
-<p class="team-bio">
-
-Dr Stephen McDonnell is an Associate Professor, as well as Consultant Orthopaedic Surgeon specialising in the hip and knee.
-
-</p>
-:::
-::::
-
-:::: team-card
-![](images/nelson-cortes.jpg){.team-photo}
-
-::: team-info
-**Professor Nelson Cortes, University of Essex (UoE)**
-
-<p class="team-role">
-
-**Professor in Biomechanics, School of Sport, Rehabilitation and Exercise Sciences (SRES)**
-
-</p>
-
-<p class="team-bio">
-
-Professor Nelson Cortes is a Professor in Biomechanics at SRES, with expertise in clinical biomechanics and osteoarthritis research.
-
-</p>
-:::
-::::
-
-:::: team-card
-![](images/wenxing-guo.jpg){.team-photo}
-
-::: team-info
-**Dr Wenxing Guo, University of Essex (UoE)**
-
-<p class="team-role">
-
-**Lecturer in Statistics & Data Science, School of Mathematics, Statistics and Actuarial Science (SMSAS)**
-
-</p>
-
-<p class="team-bio">
-
-Dr Wenxing Guo is a Lecturer in Statistics and Data Science at SMSAS, with expertise in the statistical modelling of complex and high-dimensional data.
-
-</p>
-:::
-::::
-
-:::: team-card
-![](images/stefan-maas.jpg){.team-photo}
-
-::: team-info
-**Professor Stefan Maas, Université du Luxembourg**
-
-<p class="team-role">
-
-**Professor, Department of Engineering (DoE)**
-
-</p>
-
-<p class="team-bio">
-
-Professor Stefan Maas is a full professor at the Department of Engineering (DoE), with expertise in musculoskeletal and finite element modelling in the areas of joint replacements and lower limb trauma. He has collaborated closely with orthopaedic and trauma surgeons at the main hospital in Luxembourg, Saarland University Hospital.
-
-</p>
-:::
-::::
-:::::::::::::::
-
-::: postdoc-heading
-Post-doc Researchers
-:::
-
-::::: team-grid
-:::: team-card
-![](images/Ahmed-Soliman.png){.team-photo}
-
-::: team-info
-**Dr Ahmed Soliman, University of Luxembourg**
-
-<p class="team-role">
-
-**Postdoctoral Researcher, Department of Engineering, Faculty of Science, Technology and Medicine**
-
-</p>
-
-<p class="team-bio">
-
-Dr. Ahmed Soliman specialises in biomechanics and orthopaedic engineering, with a focus on lower limb trauma and joint replacement. His expertise includes motion analysis, musculoskeletal simulation, numerical and experimental assessment of traumatic bone injuries and related orthopaedic devices, as well as the development of personalised 3D-printed implants. His current research focuses on improving the performance and longevity of orthopaedic implants.
-
-</p>
-:::
-::::
-:::::
-
-::: postdoc-heading
-Collaborators
-:::
-
-::::::::: team-grid
-:::: team-card
-![](images/Zainab-Altai.jpg){.team-photo}
-
-::: team-info
-**Dr Zainab Altai, University of Essex (UoE)**
-
-<p class="team-role">
-
-**Research Fellow (IPHW) in Biomechanics, School of Sport, Rehabilitation and Exercise Sciences**
-
-</p>
-
-<p class="team-bio">
-
-Dr Zainab Altai develops computational models of the human musculoskeletal system, combining motion capture, musculoskeletal and finite element modelling, wearable sensors, and machine learning.
-
-</p>
-:::
-::::
-
-:::: team-card
-![](images/Alican-Alpkaya.jpeg){.team-photo}
-
-::: team-info
-**Dr Alican Tuncay Alpkaya, Kırklareli University**
-
-<p class="team-role">
-
-**Assistant Professor in Mechanical Engineering Department**
-
-</p>
-
-<p class="team-bio">
-
-Dr Alican Tuncay Alpkaya specialises in the finite element method, solid mechanics, wear, and material modelling.
+Senior Lecturer in biomechanics and physiotherapy with expertise at the intersection of rehabilitation, human movement science, and machine learning.
 
 </p>
 :::
@@ -205,21 +39,31 @@ Dr Alican Tuncay Alpkaya specialises in the finite element method, solid mechani
 ![](images/behnam-gholami.jpg){.team-photo}
 
 ::: team-info
-**Behnam Gholami, University of Essex (UoE)**
+<p class="team-name">
 
-<p class="team-role">
+### **Behnam Gholami**
 
-**Doctoral researcher, and research assistant in Biomechanics, School of Sport, Rehabilitation and Exercise Sciences (SRES)**
+</p>
+
+<p class="team-department">
+
+Doctoral Researcher & Research Assistant
+
+</p>
+
+<p class="team-affiliation">
+
+University of Essex
 
 </p>
 
 <p class="team-bio">
 
-Behnam Gholami is a doctoral researcher in Biomechanics and Computer Vision at the University of Essex. He leverages a strong foundation in biomedical and mechanical engineering to advance research in human pose estimation and machine learning. In addition to his work in AI deployment and data curation, he possesses advanced technical proficiency in vibration and control, solid mechanics, and the modeling of smart materials.
+Behnam Gholami is a doctoral researcher in Biomechanics and Computer Vision at the University of Essex. He leverages a strong foundation in biomedical and mechanical engineering to advance research in human pose estimation.
 
 </p>
 :::
 ::::
-:::::::::
+:::::::
 
 {{< include _disclaimer.qmd >}}

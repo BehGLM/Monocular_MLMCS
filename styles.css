@@ -22,80 +22,152 @@ pre, code, kbd, samp, .sourceCode, .code-with-copy {
 table, .table, .table caption, figcaption {
   text-align: left;
 }
-/* === Team List Layout === */
+/* === Team Grid Layout (3-Column) === */
 
 .postdoc-heading {
   display: block;
-  margin: 3rem auto 1.5rem auto; /* Centered with spacing */
-  max-width: 900px;              /* Align with the grid width */
-  font-size: 1.75rem;            /* Bigger font */
-  font-weight: 800;              /* Bold */
-  color: #0b1f3a;                /* Dark Blue */
+  margin: 3rem auto 1.5rem auto;
+  max-width: 1200px;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0b1f3a;
   text-decoration: underline;
-  text-align: left;
-  padding-left: 0.5rem;          /* Slight alignment tweak */
+  text-align: center; /* Centered heading */
 }
 
-/* The container for the list of cards */
+/* The Container: Grid instead of Flex Column */
 .team-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* The individual card */
+/* The Individual Card */
 .team-card {
   display: flex;
-  flex-direction: row;
-  align-items: center;    
+  flex-direction: column; /* Stack vertically */
+  align-items: center;    /* Center align items */
   background: #fff;
-  border: 1px solid var(--bs-border-color, #e5e7eb);
+  border: 1px solid #e6effc; /* Subtle blue border */
   border-radius: 1rem;
-  padding: 1.5rem;
-  gap: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* The Image */
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* The Image: Circular */
 .team-photo {
-  width: 140px;          /* Fixed width */
-  height: 140px;         /* Fixed height */
-  min-width: 140px;      /* FORCE width so it never squeezes */
-  
-  /* Use 50% for Circle, or 12px for Rounded Square */
-  border-radius: 12px;   
-  
-  object-fit: cover;     /* Ensures the image fills the box without stretching */
-  object-position: top;  /* Focus on the face (top of image) */
-  margin: 0;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;        /* Make it a circle */
+  border: 4px solid #eef6ff; /* Light blue ring around photo */
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 1rem;       /* Space below image */
 }
 
 /* The Text Container */
 .team-info {
-  flex-grow: 1;
-  text-align: left;
+  width: 100%;
+  text-align: center; /* Center all text */
 }
+
+/* Name Styling */
+.team-info p.team-name {
+  margin: 0.5rem 0 0.25rem 0;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  color: #000000 !important;
+  text-align: center !important;
+}
+
+/* Job Title (Blue Text) */
+.team-department {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2e74d7; /* Bright Blue */
+  margin-bottom: 0.5rem;
+}
+
+/* University Badge (Pill shape) */
+.team-affiliation {
+  display: inline-block;
+  background-color: #f0f4f8; /* Light grey background */
+  color: #6c757d;            /* Muted text */
+  padding: 0.25rem 1rem;
+  border-radius: 50px;       /* Pill shape */
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  border: 1px solid #e1e4e8;
+}
+
+/* Bio Text */
+.team-bio {
+  margin-top: 1rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center !important; /* Center the bio text */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    max-width: 500px;
+  }
+}
+
 
 .team-name {
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.35rem !important;   /* bigger */
+  font-weight: 800 !important;     /* bold */
+  color: #000000 !important;
 }
 
-.team-role {
-  margin: 0.25rem 0 0.75rem;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #555;
+/* Force name styling inside team cards (override theme defaults) */
+.team-grid .team-info p.team-name {
+  font-size: 1.6rem !important;  /* Increased from 1.35rem to 1.6rem */
+  font-weight: 800 !important;    /* Keeps it Extra Bold */
+  color: #000000 !important;
+  margin-bottom: 0.5rem;          /* Adds a slight gap below the larger name */
+}
+
+
+
+.team-affiliation {
+  margin: 0.15rem 0 0;
+  font-size: 1rem;
+  font-weight: 400;           /* not bold */
+  color: #1e4272;             /* dark blue */
+}
+
+.team-department {
+  margin: 0.15rem 0 0.75rem;
+  font-size: 1rem;            /* Slightly larger for readability */
+  font-weight: 600;           /* Semi-bold makes the blue pop more */
+  color: #0d6efd !important;  /* Sharp Blue (Matches your title banner) */
 }
 
 .team-bio {
   margin: 0;
+  color: #000000;
   text-align: justify;
   hyphens: auto;
+  font-style: normal;
 }
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -292,32 +364,41 @@ main.content, .page-columns {
      Quarto's .column-screen now handles the width automatically. */
 }
 
-/* 3. Layout: Image Left, Text Right */
+/* 3. Layout: Banner (Text + GIF strip) */
 .banner-content {
-  max-width: 1100px; /* Standardize width */
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  align-items: center; /* Vertically center image with text */
-  gap: 2rem;           /* Space between image and text */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
 }
 
-/* 4. The Image Style */
+/* 4. (Optional legacy) If you ever use a single banner image again */
 .banner-logo {
-  width: 180px;        /* Adjust size as preferred */
+  width: 180px;
   height: auto;
   object-fit: contain;
-  flex-shrink: 0;      /* Prevent image from squishing */
+  flex-shrink: 0;
 }
 
 /* 5. The Text Style */
 .banner-text h1 {
-  color: white !important;
+  /* Fallback if background-clip isn't supported */
+  color: #ffd700 !important;
+
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   line-height: 1.2;
+
+  /* Gradient Gold */
+  background: linear-gradient(90deg, #fff3b0 0%, #ffd700 35%, #ffb347 70%, #fff8dc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .banner-text p {
@@ -325,21 +406,49 @@ main.content, .page-columns {
   font-size: 1.2rem;
   margin-bottom: 0;
   font-weight: 400;
+
+  /* Override global justified paragraphs */
+  text-align: center !important;
+  text-justify: unset !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
 }
 
-/* 6. Mobile Responsiveness */
+
+/* 6. GIF strip under the subtitle */
+.banner-gifs {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.banner-gif {
+  width: 30%;
+  max-width: 320px;
+  min-width: 180px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* 7. Mobile Responsiveness */
 @media (max-width: 768px) {
-  .banner-content {
-    flex-direction: column; /* Stack vertically on phones */
-    text-align: center;
+  .banner-gifs {
+    flex-direction: column;
   }
-  
-  .banner-logo {
-    width: 120px;
-    margin-bottom: 1rem;
+
+  .banner-gif {
+    width: 100%;
+    max-width: 420px;
   }
 }
+
 /* === Contact Page Styles === */
+
 .contact-block {
   font-size: 1.5rem;   /* Adjust this number to make it bigger/smaller (default is 1rem) */
   line-height: 1.8;    /* Adds a little more space between the lines */
@@ -449,3 +558,22 @@ footer.footer {
   margin: 0;
 }
 
+/* === Home (Hero) section: make headings + text black and slightly bigger === */
+.hero-section h2,
+.hero-section h3 {
+  color: #000000 !important;
+}
+
+.hero-section h2 {
+  font-size: 2.15rem !important; /* slightly bigger */
+}
+
+.hero-section h3 {
+  font-size: 1.85rem !important; /* slightly bigger */
+}
+
+.hero-section p {
+  color: #000000 !important;
+  font-size: 1.12rem;            /* slightly bigger */
+  line-height: 1.7;
+}

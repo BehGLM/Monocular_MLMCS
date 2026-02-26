@@ -3,7 +3,7 @@ title: "Publications"
 page-layout: full
 ---
 
-Here is a list of our peer-reviewed articles related to the SafeJOINTs project.
+Here is a list of our peer-reviewed articles related to the MLMCS project.
 
 ## Journal Articles
 * **Coming soon...**
